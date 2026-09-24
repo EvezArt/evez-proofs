@@ -1,0 +1,21 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"External Company Confirmation Record",
+  "type":"object",
+  "required":["record_id","subject_name","recipient","request","status"],
+  "properties":{
+    "record_id":{"type":"string"},
+    "subject_name":{"const":"Steven Crawford-Maggard"},
+    "recipient":{"type":"string"},
+    "request":{"type":"string"},
+    "status":{"enum":["REQUESTED","ACKNOWLEDGED","CONFIRMED","DENIED","PARTIAL","NO_RESPONSE","UNKNOWN"]},
+    "recipient_reference":{"type":["string","null"]},
+    "requested_at":{"type":["string","null"],"format":"date-time"},
+    "responded_at":{"type":["string","null"],"format":"date-time"},
+    "response":{"type":["string","null"]},
+    "source_url":{"type":["string","null"],"format":"uri"},
+    "event_spine_hash":{"type":["string","null"]},
+    "attachment_sha256":{"type":["string","null"]}
+  },
+  "additionalProperties":false
+}
